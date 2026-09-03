@@ -1,0 +1,41 @@
+:root { color-scheme: dark; --bg:#0e1014; --card:#161a21; --line:#232833; --fg:#e7e9ee; --mute:#8b94a6; --pos:#5ee08a; --neg:#ff8080; --warn:#e8c98a; --acc:#3d5afe; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 -apple-system, "Segoe UI", system-ui, sans-serif; }
+.wrap { max-width: 520px; margin: 0 auto; padding: 22px 18px 90px; }
+h1 { font-size: 24px; margin: 0 0 6px; }
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--mute); margin: 26px 0 8px; font-weight: 700; }
+.eyebrow { color: var(--mute); font-size: 13px; text-transform: uppercase; letter-spacing: .08em; margin: 8px 0 0; }
+.big { font-size: 56px; font-weight: 700; letter-spacing: -.02em; margin: 0; font-variant-numeric: tabular-nums; }
+.muted { color: var(--mute); } .small { font-size: 13px; }
+.pos { color: var(--pos); } .neg { color: var(--neg); } .warn { color: var(--warn); } .err { color: var(--neg); }
+.bar { height: 10px; background: var(--card); border-radius: 99px; overflow: hidden; margin: 14px 0 6px; }
+.bar > div { height: 100%; background: var(--acc); border-radius: 99px; }
+.bar.thin { height: 5px; margin: 8px 0 4px; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.card .k { color: var(--mute); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.card .v { font-size: 22px; font-weight: 600; margin-top: 4px; font-variant-numeric: tabular-nums; }
+table { width: 100%; border-collapse: collapse; }
+td { padding: 8px 0; border-bottom: 1px solid var(--line); }
+tr.strong td { font-weight: 700; } tr.muted td { color: var(--mute); }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+input, select { width: 100%; font: inherit; font-size: 18px; padding: 12px 14px; margin: 8px 0; background: var(--card); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; }
+input[type=number] { font-size: 30px; font-weight: 600; }
+button { font: inherit; background: var(--card); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; cursor: pointer; }
+button.on { background: var(--acc); border-color: var(--acc); color: #fff; }
+button.primary { width: 100%; background: var(--acc); border-color: var(--acc); color: #fff; font-weight: 600; padding: 14px; margin-top: 10px; }
+button:disabled { opacity: .45; }
+.row { display: flex; gap: 10px; align-items: center; } .row.between { justify-content: space-between; }
+.seg { display: flex; } .seg button { border-radius: 0; } .seg button:first-child { border-radius: 10px 0 0 10px; } .seg button:last-child { border-radius: 0 10px 10px 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; } .chips button { padding: 7px 12px; font-size: 14px; }
+.chips.full { width: 100%; margin-top: 10px; }
+.list { list-style: none; padding: 0; margin: 12px 0 0; }
+.list li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px; padding: 10px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+.list .l { flex: 1; min-width: 0; } .list .t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tag { font-size: 10px; color: var(--mute); background: var(--line); padding: 1px 6px; border-radius: 99px; margin-left: 6px; }
+.steps { list-style: none; padding: 0; margin: 12px 0; } .steps li { padding: 10px 12px; margin-bottom: 8px; border-radius: 10px; background: var(--card); border-left: 4px solid var(--line); }
+.steps li.funded { border-left-color: var(--pos); } .steps li.partial { border-left-color: var(--warn); } .steps li.none { opacity: .5; }
+.tabs { position: fixed; bottom: 0; left: 0; right: 0; display: flex; background: var(--card); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom); }
+.tabs button { flex: 1; border: 0; border-radius: 0; background: transparent; color: var(--mute); padding: 14px 4px; font-size: 13px; }
+.tabs button.on { color: #fff; font-weight: 600; }
+code { background: var(--card); padding: 2px 6px; border-radius: 6px; }
