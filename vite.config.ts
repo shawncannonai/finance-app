@@ -2,9 +2,12 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
-// Served from GitHub Pages at /finance-app/, so assets need that base.
+// Self-hosted at the domain root by default; VITE_BASE overrides it (e.g. for
+// GitHub Pages, which serves from /finance-app/).
+const base = process.env.VITE_BASE ?? "/";
+
 export default defineConfig({
-  base: "/finance-app/",
+  base,
   plugins: [
     react(),
     VitePWA({
@@ -16,9 +19,9 @@ export default defineConfig({
         theme_color: "#0e1014",
         background_color: "#0e1014",
         display: "standalone",
-        start_url: "/finance-app/",
+        start_url: base,
         icons: [
-          { src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any maskable" },
+          { src: base + "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any maskable" },
         ],
       },
       workbox: {
